@@ -1,0 +1,206 @@
+{% load static %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My skills</title>
+     <link rel="stylesheet" href="{% static 'project.css'%}">
+     	<script src="https://kit.fontawesome.com/6a08cdc35c.js" crossorigin="anonymous"></script>
+
+</head>
+<div id="overlay">
+	<div id="progstat"></div>
+	<div id="progress"></div>
+  </div>
+  <div id="container">
+	<img src="http://placehold.it/3000x3000/cf5">
+  </div>
+<body>
+  
+    <div class="all3">
+	<div class="navbar">
+		<nav>
+			<div class="firstnav">
+                <a href="{%url 'home'%}"><span class="R">R</span></a>
+		<br><span class="rb">Roy Benisti</span> <br>
+		<span class="job">Web developer</span>
+	</div>
+		<div class="navsection">
+			<a href="{%url 'about'%}">About Me </a>
+			<a href="{%url 'skills'%}">My Skills</a>
+			<a href="{%url 'projects'%}">My projects</a>
+			<a href="{%url 'contact'%}">Contact</a>
+			
+			</div>
+			<div class="icons">
+			<a href="https://www.linkedin.com/in/roy-benisti-3b7ab511b/"><i class="fa-brands fa-linkedin"></i></a>
+			<a href="https://github.com/Roycoder1"><i class="fa-brands fa-github"></i></a>
+			<a href="https://www.facebook.com/roy.benisti"><i class="fa-brands fa-square-facebook"></i></a>
+		</div>
+		</nav>
+	</div>
+	 
+    <h1 class='projects'>My projects</h1>
+    <!-- <div class="allproject">  -->
+
+	<div class="gallery">
+		<div class="gallery-container">
+			<div class="gallery-item gallery-item-1" data-index="1">
+			<a href="https://www.loom.com/share/d0ccec01c788411eb658afac69f4cc56"><img class="project project-1" src="{% static 'project1.png'%}" ></a><br>
+			<span class="spellscript"> SpellScript</span>
+			<p class="hackaton1">(Hackhaton Winner)</p>
+		</div>
+			<div class="gallery-item gallery-item-2" data-index="2">
+			<a href="https://www.loom.com/share/872ccdbe10224319b4ac3615f6d60da7"><img class=" project project-2" src="{% static 'hackaton2.png'%}" ></a>
+			<span class="rivals">Rivals</span>
+		</div>
+		<div class="gallery-item gallery-item-3" data-index="3">
+			<a href="https://music-in-israel.herokuapp.com/"><img class="project project-3" src="{% static 'Finalproject.png'%}" ></a>
+			<span class="musicshare">MusicShare</span>
+
+		</div>
+		<div class="gallery-item gallery-item-4" data-index="4">
+			<a href="https://chatroyapp.herokuapp.com/"><img class="project project-4" src="{% static 'chatApp.png'%}" ></a>
+			<span class="chatProject"> Chat app</span>
+		</div>
+		</div>
+		<div class="gallery-controls"></div>
+
+	</div>
+	<script src="{% static 'script.js'%}"></script>
+
+
+
+
+
+
+
+    <!-- {% comment %} <div class="firstproject">
+        <div class="img1"> <a href="https://www.loom.com/share/d0ccec01c788411eb658afac69f4cc56"><img  class="pj1"  src="{% static 'project1.png'%}" width="250px" height="250px"></a></div> <br>
+        <span class="spellscript">SpellScript</span> <br>
+        <p class="hackaton1">(Hackhaton Winner)</p>
+    </div>
+    <div class="secondproject">
+        <div class="img2"><a href="https://www.loom.com/share/872ccdbe10224319b4ac3615f6d60da7"><img  class="pj2"  src="{% static 'hackaton2.png'%}" width="250px" height="250px"> </a> </div> <br>
+    <span class="rivals">Rivals</span>
+</div>
+    <div class="thirdproject">
+        <div class="img3"> <a href="https://music-in-israel.herokuapp.com/"><img class="pj3" src="{% static 'Finalproject.png'%}" width="250px" height="250px"></a></div> <br>
+    <span class="musicshare">MusicShare</span>
+
+    </div> {% endcomment %} -->
+<!-- </div> -->
+
+<footer>
+	<div class="contacts2">
+		<a href="mailto:roybenisti93@gmail.com" target="_blank">
+			<h6>Contact at : roybenisti93@gmail.com</h6></a>
+			<a href="/static/cv_portfolio.pdf " download>
+			<h6>Resume: Roy Benisti</h6>
+            
+		</a>
+
+	</div>
+</footer>
+<script>
+;(function(){
+  function id(v){ return document.getElementById(v); }
+  function loadbar() {
+    var ovrl = id("overlay"),
+        prog = id("progress"),
+        stat = id("progstat"),
+        img = document.images,
+        c = 0,
+        tot = img.length;
+    if(tot == 0) return doneLoading();
+
+    function imgLoaded(){
+      c += 1;
+      var perc = ((100/tot*c) << 0) +"%";
+      prog.style.width = perc;
+      stat.innerHTML = "Loading "+ perc;
+      if(c===tot) return doneLoading();
+    }
+    function doneLoading(){
+      ovrl.style.opacity = 0;
+      setTimeout(function(){ 
+        ovrl.style.display = "none";
+      }, 1500);
+    }
+    for(var i=0; i<tot; i++) {
+      var tImg     = new Image();
+      tImg.onload  = imgLoaded;
+      tImg.onerror = imgLoaded;
+      tImg.src     = img[i].src;
+    }    
+  }
+  document.addEventListener('DOMContentLoaded', loadbar, false);
+}());
+
+
+// const galleryContainer = document.querySelector('.gallery-container')
+// const galleryControlsContainer=document.querySelector('.gallery-controls')
+// const galleryControls=['previous','next']
+// const galleryItems=document.querySelectorAll('.gallery-item')
+
+// class Carousel{
+
+// 	constructor(container,items,controls){
+// 		this.carouselContainer=container;
+// 		this.carouselControls = controls;
+// 		this.carouselArray=[...items];
+// 	}
+// 	updateGallery(){
+// 		this.carouselArray.forEach(el=>{
+// 			el.classList.remove('gallery-item-1');
+// 			el.classList.remove('gallery-item-2');
+// 			el.classList.remove('gallery-item-3');
+// 			el.classList.remove('gallery-item-4');
+
+// 		})
+// 		this.carouselArray.slice(0, 4).forEach(el , i=> {
+// 			el.classList.add(`gallery-item-${i+1}`);
+// 		});
+// 	}
+// 	setCurrentState(direction){
+// 		if(direction.className == 'gallery-controls-previous'){
+// 			this.carouselArray.unshift(this.carouselArray.pop());
+// 		}else{
+// 			this.carouselArray.push(this.carouselArray.shift())
+// 		}
+// 		this.updateGallery();
+
+
+		
+// 	}
+// 	setControls(){
+// 		this.carouselControls.forEach(control=>{
+// 			galleryControlsContainer.appendChild(document.createElement('button')).className =`gallery-controls-${control}`;
+// 			document.querySelector(`.gallery-controls-${control}`).innerText=control;
+
+// 		});
+// 	}
+// 	useControls(){
+// 		const triggers=[...galleryControlsContainer.childNodes];
+// 		triggers.forEach(control=>{
+// 			control.addEventListener('click', e =>{
+// 				e.preventDefault();
+// 				this.setCurrentState(control);
+
+// 			});
+// 		});
+// 	}
+// }
+
+// const exampleCarousel = new Carousel(galleryContainer,galleryItems,galleryControls);
+// exampleCarousel.setControls();
+// exampleCarousel.useControls();
+
+</script>
+    
+</body>
+</html>
