@@ -48,7 +48,7 @@ class Carousel{
 	useControls(){
 		const triggers=[...galleryControlsContainer.childNodes];
 		triggers.forEach(control=>{
-			control.addEventListener('click', e =>{
+			control.addEventListener('mouseover', e =>{
 				e.preventDefault();
 				this.setCurrentState(control);
 
