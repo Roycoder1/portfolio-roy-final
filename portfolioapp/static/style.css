@@ -504,8 +504,9 @@ h6{
  #welcome{
     white-space: nowrap;
     overflow: hidden;
-    width: 30em;
-    animation: type 4s steps(60, end); 
+    width: 615px;
+    animation: type 2s steps(60, end); 
+
   
 }
 @keyframes type{ 
