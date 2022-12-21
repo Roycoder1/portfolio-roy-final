@@ -355,7 +355,7 @@ a{
 .titlecontactpage{
     text-align: center;
     /* margin-right: 99px; */
-    margin-left: 25px;
+    margin-right: 61px;
     font-size: 3.3em;
     margin-bottom: 72px;
     color: #08fdd8;
@@ -375,7 +375,7 @@ a{
 .contact1{
     font-size: 1.3em;
     position: absolute;
-    top: 306px;
+    top: 325px;
     left: 480px;
     color: #08fdd8;
     font-weight: bold;
@@ -392,14 +392,15 @@ a{
     font-weight: bold;
     font-size: 1.3em;
     position: absolute;
-    top: 367px;
+    top: 389px;
     left: 480px;
     color: #08fdd8;
 }
 .contact3{
     font-size: 1.3em;
     position: absolute;
-    top: 426px;
+    top: 446px;
+
     left: 480px;
     color: #08fdd8;
     font-weight: bold;
@@ -407,7 +408,7 @@ a{
 .contact4{
     font-size: 1.3em;
     position: absolute;
-    top: 510px;
+    top: 530px;
     left: 462px;
     color: #08fdd8;
     font-weight: bold;
@@ -513,33 +514,57 @@ h6{
     from { width: 0; } 
   } 
 
-  #overlay{
-    position:fixed;
-    z-index:99999;
-    top:0;
-    left:0;
-    bottom:0;
-    right:0;
-    background:rgba(0,0,0,0.9);
-    transition: 1s 0.4s;
-  }
-  #progress{
-    height:1px;
-    background:#fff;
-    position:absolute;
-    width:0;                /* will be increased by JS */
-    top:50%;
-  }
-  #progstat{
-    font-size:0.7em;
-    letter-spacing: 3px;
-    position:absolute;
-    top:50%;
-    margin-top:-40px;
-    width:100%;
-    text-align:center;
-    color:#fff;
-  }
-
+#overlay{
+position:fixed;
+z-index:99999;
+top:0;
+left:0;
+bottom:0;
+right:0;
+background:rgba(0,0,0,0.9);
+transition: 1s 0.4s;
+}
+#progress{
+height:1px;
+background:#fff;
+position:absolute;
+width:0;                /* will be increased by JS */
+top:50%;
+}
+#progstat{
+font-size:0.7em;
+letter-spacing: 3px;
+position:absolute;
+top:50%;
+margin-top:-40px;
+width:100%;
+text-align:center;
+color:#fff;
+}
+html, body {
+width: 100%;
+height:100%;
+}
+body {
+font-family: 'Josefin Sans', sans-serif !important;
+box-sizing: border-box;}
+.aboutall,.bodyskills,.contactback{
+    height: 100vh;
+    width: 100%;
+    background: linear-gradient(45deg,#d2001a,#7462ff,grey,black);
+    background-size: 300% 300%;
+    animation: color 12s ease-in-out infinite;
+}
+@keyframes color{
+    0%{
+        background-position: 0 50%;
+    }
+    50%{
+        background-position: 100% 50%;
+    }
+    100%{
+        background-position: 0 50%;
+    }
+}
 
 
