@@ -104,6 +104,7 @@ WSGI_APPLICATION = "portfolio.wsgi.application"
 #     }
 # }
 
+#vrai database
 DATABASES = {
     "default": {
         'ENGINE': 'django.db.backends.postgresql',
